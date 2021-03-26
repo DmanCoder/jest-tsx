@@ -39,3 +39,17 @@ describe('<GuessedWords />', () => {
     checkProps(GuessedWords, defaultProps);
   });
 });
+
+describe('If there are no words guessed', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = setUp({ guessedWords: [] });
+  });
+  
+  it('Should render instructions to guess a word', () => {
+    const instructions = findByTestAttribute(wrapper, 'guess-instructions');
+    expect(instructions.text().length).not.toBe(0);
+  });
+});
+describe('If there are words guessed', () => {});
