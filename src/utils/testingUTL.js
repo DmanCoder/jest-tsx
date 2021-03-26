@@ -5,6 +5,12 @@
 // import rootReducer from '../redux/reducers/index';
 // import { middleware } from '../redux/store';
 
+/*
+ * Return node(s) with the given data-test attribute.
+ * @param {ShallowWrapper} wrapper -  Enzyme shallow wrapper.
+ * @param {string} attr - Value of data-test attribute for search.
+ * @returns {ShallowWrapper}
+ */
 const findByTestAttribute = (wrapper, attr) => {
   const component = wrapper.find(`[data-test='${attr}']`);
   return component;

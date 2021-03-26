@@ -3,11 +3,17 @@ import { shallow } from 'enzyme';
 // Component
 import Congrats from './congrats';
 
-// UTILS
+// Utilities
 import allUTL from '../../utils/allUTL';
 
 const { findByTestAttribute } = allUTL.testingUTL;
 
+/*
+ * Factory function to create a ShallowWrapper for the Congrats component.
+ * @function setUp
+ * @param {object} props - Component props specific to this setup.
+ * @returns {ShallowWrapper}
+ */
 const setUp = (props = {}) => {
   const component = shallow(<Congrats {...props} />);
   return component;
