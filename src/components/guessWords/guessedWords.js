@@ -23,8 +23,8 @@ const GuessedWords = ({ guessedWords }) => {
               <th>Guess</th>
               <th>Matching Letters</th>
             </tr>
-            <tbody>{guessedWordsRows}</tbody>
           </thead>
+          <tbody>{guessedWordsRows}</tbody>
         </table>
       </div>
     );
