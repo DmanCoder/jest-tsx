@@ -3,6 +3,7 @@ import React from 'react';
 // Components
 import Congrats from './components/congrats/congrats';
 import GuessedWords from './components/guessWords/guessedWords';
+import Input from './components/input/input';
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
           },
         ]}
       />
+
+      <Input secreteWord="" />
     </div>
   );
 };
