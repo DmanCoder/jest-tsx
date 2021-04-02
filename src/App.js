@@ -1,30 +1,29 @@
-import React from 'react';
+import { useEffect } from 'react';
+import './App.css';
 
-// Components
-import Congrats from './components/congrats/congrats';
-import GuessedWords from './components/guessWords/guessedWords';
-import Input from './components/input/input';
+import Congrats from './Congrats';
+import GuessedWords from './GuessedWords';
+import Input from './Input';
+import { getSecretWord } from './actions';
 
-const App = () => {
+function App() {
+  // TODO: get props from shared state
   const success = false;
   const secretWord = 'party';
   const guessedWords = [];
 
+  useEffect(() => {
+    getSecretWord();
+  }, [])
+
   return (
-    <div data-test="app-component" className="container">
+    <div data-test="component-app" className="container">
       <h1>Jotto</h1>
       <Congrats success={success} />
-      <Input success={success} secreteWord={secretWord} />
-      <GuessedWords
-        guessedWords={[
-          {
-            guessedWord: 'Train',
-            letterMatchCount: 3,
-          },
-        ]}
-      />
+      <Input success={success} secretWord={secretWord} />
+      <GuessedWords guessedWords={guessedWords} />
     </div>
   );
-};
+}
 
 export default App;

@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ secreteWord }) => {
-  const [currentGuess, setCurrentGuess] = React.useState('');
+function Input({ secretWord, success }) {
+  const [currentGuess, setCurrentGuess] = React.useState("");
+
+  if (success) {
+    return <div data-test='component-input' />
+  }
 
   return (
-    <div data-test="input-component" className="">
+    <div data-test='component-input'>
       <form className="form-inline">
         <input
           data-test="input-box"
@@ -15,25 +19,25 @@ const Input = ({ secreteWord }) => {
           value={currentGuess}
           onChange={(event) => setCurrentGuess(event.target.value)}
         />
-
         <button
           data-test="submit-button"
-          onClick={(event) => {
-            event.preventDefault();
-            // TODO: Update `guessedWords` global state
-            // TODO: Check against `secretWord` and optionally update `success` global state
-            setCurrentGuess('');
+          onClick={(evt) => {
+            evt.preventDefault();
+            // TODO: update guessedWords
+            // TODO: check against secretWord and update success if necessary
+            setCurrentGuess("");
           }}
           className="btn btn-primary mb-2"
         >
-          Submit
+        Submit
         </button>
       </form>
     </div>
   );
-};
+}
 
 Input.propTypes = {
-  secreteWord: PropTypes.string.isRequired,
+  secretWord: PropTypes.string.isRequired,
 };
+
 export default Input;
