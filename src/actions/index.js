@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const actionTypes = {
   CORRECT_GUESS: 'CORRECT_GUESS',
+  GUESS_WORD: 'GUESS_WORD',
 };
 
 /**
@@ -10,9 +11,11 @@ export const actionTypes = {
  * @function guessWord
  * @param {string} guessedWord - Guessed word.
  * @returns {function} - Redux Thunk function.
- */
+*/
 export const correctGuess = () => {
-  return { type: actionTypes.CORRECT_GUESS };
+  return function(dispatch, getState) {
+
+  }
 };
 
 export const getSecretWord = () => {
